@@ -28,21 +28,43 @@ const Subtitulo = styled.h3`
 `
 
 const Resultado = styled.div`
+    position: relative; 
+    z-index: 10; 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
     cursor: pointer;
+    background-color: #FFF; 
+    padding: 15px; 
+    border-radius: 10px; 
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out; 
+
     p {
-        width: 200px;
+        flex: 1; 
+        background-color: transparent; 
+        color: #000; 
+        padding: 10px;
+        border-radius: 5px; 
+        text-align: left; 
+        margin: 0;
     }
+
     img {
         width: 100px;
+        border-radius: 5px;
+        margin-left: 20px; 
     }
+
     &:hover {
+        transform: scale(1.02);
         border: 1px solid white;
     }
-`
+`;
+
+
 
 const Pesquisa = () => {
     const [ livrosPesquisados, setLivrosPesquisados ] = useState([])
