@@ -76,8 +76,7 @@ function Favoritos() {
     }, []);
 
     function removeFavorito(nomeDoFavorito) {
-        const novosFavoritos = favoritos.filter(favorito => favorito.nome !== nomeDoFavorito);
-        setFavoritos(novosFavoritos);
+        setFavoritos(prevFavoritos => prevFavoritos.filter(favorito => favorito.nome !== nomeDoFavorito));
     }
 
     return (
