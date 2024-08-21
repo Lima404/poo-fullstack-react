@@ -6,6 +6,7 @@ const LogoContainer = styled.div`
     display: flex;
     font-size: 30px;
     gap: 0px 10px;
+    texte-decoration: none;
 `
 
 
@@ -13,7 +14,7 @@ const Logos = () => {
     return(
         <LogoContainer>
             <img src={logo} alt='logo'></img>
-            <p><strong>Alura</strong>Books</p>
+            <p><strong>Estante</strong>De livros</p>
         </LogoContainer>
     )
 }
