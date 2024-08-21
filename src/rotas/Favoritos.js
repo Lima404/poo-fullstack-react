@@ -13,6 +13,7 @@ const ResultadoContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
 `;
 
 const Resultado = styled.div`
@@ -75,8 +76,19 @@ function Favoritos() {
         fetchFavoritos();
     }, []);
 
-    function removeFavorito(nomeDoFavorito) {
-        setFavoritos(prevFavoritos => prevFavoritos.filter(favorito => favorito.nome !== nomeDoFavorito));
+    async function removeFavorito(nomeDoFavorito) {
+        setFavoritos(async prevFavoritos => {
+          const favoritoParaRemover = prevFavoritos.find(favorito => favorito.nome === nomeDoFavorito);
+          
+          if (favoritoParaRemover) {
+
+      
+            // Remove da lista local
+            return prevFavoritos.filter(favorito => favorito.nome !== nomeDoFavorito);
+          }
+          return prevFavoritos; // Se não encontrar o favorito, retorna a lista inalterada
+        });
+    
     }
 
     return (
